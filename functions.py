@@ -17,9 +17,9 @@ def get_posts_by_word(word: str) -> list[dict]:
 
 
 def add_post(post: dict) -> dict:
+    """Добавление поста"""
     posts: list[dict] = load_posts()
     posts.append(post)
     with open('posts.json', 'w', encoding='utf-8') as file:
         json.dump(posts, file)
     return post
-
